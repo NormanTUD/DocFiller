@@ -17,11 +17,13 @@ use File::Slurp;
 
 my %skip_fields = ();
 my %db = ();
+my %field_original_names = ();
 
 my %options = (
 	debug => 0,
 	file => undef,
-	dbfile => "$ENV{HOME}/.dbfilefiller"
+	dbfile => "$ENV{HOME}/.dbfilefiller",
+	fillwhatyoucan => 0
 );
 
 END {
@@ -99,6 +101,8 @@ sub analyze_args {
 	foreach (@_) {
 		if(m#^--debug$#) {
 			$options{debug} = 1;
+		} elsif(m#^--fillwhatyoucan$#) {
+			$options{fillwhatyoucan} = 1;
 		} elsif(m#^--dbfile=(.*)$#) {
 			$options{dbfile} = $1;
 		} elsif(m#^--file=(.*)$#) {
@@ -140,8 +144,10 @@ sub analyze_file {
 		foreach my $field_line (split /\n/, $field) {
 			if($field_line =~ m#^(.*?): (.*)$#) {
 				my $name = $1;
-				my $string = decode_entities(decode('utf-8',$2));
+				my $value = $2;
+				my $string = decode_entities(decode('utf-8', $value));
 				$this_field{$name} = $string;
+				$field_original_names{$string} = $value;
 			}
 		}
 		if(keys %this_field) {
@@ -153,6 +159,7 @@ sub analyze_file {
 }
 
 sub dinput {
+	return if $options{fillwhatyoucan};
 	my $text = shift;
 	my $entry = shift;
 	my $max_length = shift // 0;
@@ -178,6 +185,7 @@ sub dinput {
 }
 
 sub radio {
+	return if $options{fillwhatyoucan};
 	my $text = shift;
 	my $list = shift;
 	my $exit = shift // 1;
@@ -226,7 +234,15 @@ sub main {
 		my @merged_fields_names = ();
 		my @select_fields = [map { $_->{FieldNameAlt} ? $_->{FieldNameAlt} : $_->{FieldName} => [ $_->{FieldName} => 1] } @fields];
 
-		my @selection = checklist("Felder", @select_fields);
+		my @selection = map { $_->{FieldName} } @fields;
+		if(!$options{fillwhatyoucan}) {
+			if(@{$select_fields[0]}) {
+				@selection = checklist("Felder", @select_fields);
+			}
+		}
+
+		my $skip_re = qr#(?:Abschluss.*Bruttolohn)|(?:Name.*und.*Ort)|(?:Monat.*Jahr)#i;
+
 		foreach my $possible_field (sort { $a->{FieldName} cmp $a->{FieldName} } @fields) {
 			my $possible_field_name = $possible_field->{FieldName};
 			if(!grep { $_ eq $possible_field_name } @selection) {
@@ -241,15 +257,7 @@ sub main {
 			}
 
 
-			if($possible_field_name =~ m#Abschluss / Bruttolohn /Leistung #) {
-				$skip_fields{$possible_field_name} = 1;
-			}
-
-			if($possible_field_name =~ m#Name und Ort #) {
-				$skip_fields{$possible_field_name} = 1;
-			}
-
-			if($possible_field_name =~ m#Monat / Jahr bis #) {
+			if($possible_field_name =~ m#$skip_re#) {
 				$skip_fields{$possible_field_name} = 1;
 			}
 		}
@@ -261,44 +269,61 @@ sub main {
 			$db{$merged_field} = dinput $merged_field, $db{$merged_field}, $max_length;
 			write_db();
 			my $pos = 0;
-			foreach my $field (@{$merged_fields{$merged_field}}) {
-				my $field_name = $field->{FieldName};
-				my $length = $field->{FieldMaxLength};
-				$db{$field_name} = substr($db{$merged_field}, $pos, $length);
-				write_db();
-				$pos += $length;
-
+			if($db{$merged_field}) {
+				foreach my $field (@{$merged_fields{$merged_field}}) {
+					my $field_name = $field->{FieldName};
+					my $length = $field->{FieldMaxLength};
+					$db{$field_name} = substr($db{$merged_field}, $pos, $length);
+					write_db();
+					$pos += $length;
+				}
 			}
 		}
 
-		foreach my $field (@fields) {
+		foreach my $field (@fields) { # Nur Checkboxen
 			my ($field_name, $field_name_alt, $field_type) = ($field->{FieldName}, $field->{FieldNameAlt}, $field->{FieldType});
 
 			next if $skip_fields{$field_name};
+			next if $field_name =~ m#$skip_re#;
 
-			my $desc = "";
-			my $value = "";
+			my ($desc, $value) = get_desc_value($field_name, $field_name_alt);
+
+			if ($field_type eq "Button") { # Checkboxen
+				#next;
+				my $select_yes = 0;
+
+				my $field_name_invert = get_inverted_field_name($field_name);
+
+				if(exists $db{$field_name}) {
+					if($db{$field_name} eq "yes") {
+						$select_yes = 1;
+					} else {
+						$select_yes = 0;
+					}
+				}
+
+				$db{$field_name} = radio($desc, ["Ja", ["Ja", $select_yes], "Off", ["Nein", !$select_yes]]);
+				
+				if($field_name ne $field_name_invert) {
+					print $db{$field_name};
+					$db{$field_name_invert} = $db{$field_name} eq "Ja" ? "Nein" : "Ja";
+					$skip_fields{$field_name_invert} = 1;
+				}
+			}
+		}
+
+		foreach my $field (@fields) { # Alles was nicht checkbox ist
+			my ($field_name, $field_name_alt, $field_type) = ($field->{FieldName}, $field->{FieldNameAlt}, $field->{FieldType});
+
+			next if exists $skip_fields{$field_name};
+			next if $field_name =~ m#$skip_re#;
+			die qq#$field_name !~ /$skip_re/# if $field_name =~ m#Jahr#;
+
+			my ($desc, $value) = get_desc_value($field_name, $field_name_alt);
+
 
 			if(!defined $field_name_alt) {
 				next;
-			}
-
-			if($field_name eq $field_name_alt) {
-				$desc = "$field_name_alt";
-			} else {
-				$desc = "$field_name_alt";
-			}
-
-			if($db{$field_name}) {
-				$value = $db{$field_name};
-			}
-
-			if(exists($db{$field_name})) {
-				if($db{$field_name} =~ m#^[01]$#) {
-					$desc .= " (vorherige Antwort: ".($db{$field_name} ? "Ja" : "Nein").")";
-				} elsif(exists $db{$field_name} && length $db{$field_name}) {
-					$desc .= " (vorherige Antwort: ".$db{$field_name}.")";
-				}
 			}
 
 			if($field_name eq "Familienstand") {
@@ -331,29 +356,6 @@ sub main {
 				#next;
 				$value = dinput $desc, $value, exists $field->{FieldMaxLength} ? $field->{FieldMaxLength} : 0;
 				$db{$field_name} = $value;
-			} elsif ($field_type eq "Button") {
-				#next;
-				my $select_yes = 0;
-
-				my $field_name_invert = get_inverted_field_name($field_name);
-
-				if(exists $db{$field_name}) {
-					if($db{$field_name} == 0) {
-						$select_yes = 0;
-					} else {
-						$select_yes = 1;
-					}
-				}
-
-				$db{$field_name} = radio($desc, ["Ja", ["On", $select_yes], "Nein", ["Nein", !$select_yes]]) eq "Off" ? 1 : 0;
-				
-				if($field_name ne $field_name_invert) {
-					$db{$field_name_invert} = !$db{$field_name};
-					$skip_fields{$field_name_invert} = 1;
-				}
-			} else {
-				warning "Unknown field type";
-				die Dumper $field;
 			}
 			write_db();
 		}
@@ -387,11 +389,13 @@ sub create_pdf_xml {
 <fields>
 			#;
 		foreach my $key (keys %db) {
-			$content .= qq#
-		<field name="$key">
+			if(exists $db{$key} && length $db{$key}) {
+				$content .= qq#
+		<field xfdf:original="#.$field_original_names{$key}.qq#" name="#.$field_original_names{$key}.qq#">
 			<value>$db{$key}</value>
 		</field>
 				#;
+			}
 		}
 	$content .= qq#
 	</fields>
@@ -404,6 +408,32 @@ sub create_pdf_xml {
 	my $command = qq#pdftk "$options{file}" fill_form "$filename" output "$options{file}_filled.pdf"#;
 	mysystem($command);
 	mysystem(qq#evince "$options{file}_filled.pdf"#);
+}
+
+sub get_desc_value {
+	my ($field_name, $field_name_alt) = @_;
+	my $desc = "";
+	my $value = "";
+
+	if(defined $field_name_alt && $field_name eq $field_name_alt) {
+		$desc = "$field_name_alt";
+	} else {
+		$desc = "$field_name_alt";
+	}
+
+	if(exists $db{$field_name} && $db{$field_name}) {
+		$value = $db{$field_name};
+	}
+
+	if(exists($db{$field_name}) && $db{$field_name}) {
+		if($db{$field_name} =~ m#^[01]$#) {
+			$desc .= " (vorherige Antwort: ".($db{$field_name} ? "Ja" : "Nein").")";
+		} elsif(exists $db{$field_name} && length $db{$field_name}) {
+			$desc .= " (vorherige Antwort: ".$db{$field_name}.")";
+		}
+	}
+
+	return +($desc, $value);
 }
 
 main();
