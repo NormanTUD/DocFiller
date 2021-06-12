@@ -237,7 +237,7 @@ sub main {
 		my @selection = map { $_->{FieldName} } @fields;
 
 
-		my $skip_re = qr#(?:Abschluss.*Bruttolohn)|(?:Name.*und.*Ort)|(?:Monat.*Jahr)|(Fachrichtung)|(zur.{1,5}ck)|(Anzahl)|(^(Pg\d+_|Calend|Ruecks|A_|f\d_|Nr\d+))|(^Day\d)|(Jahr|Monat vor)#i;
+		my $skip_re = qr#(?:Abschluss.*Bruttolohn)|(?:Name.*und.*Ort)|(?:Monat.*Jahr)|Fachrichtung|(zur.{1,5}ck)|Anzahl|(^(Pg\d+_|Calend|Ruecks|A_|f\d_|Nr\d+))|(^Day\d)|(Jahr|Monat vor)|Sonstiger|^nein|^ja#i;
 
 		foreach my $possible_field (sort { $a->{FieldName} cmp $a->{FieldName} } @fields) {
 			my $possible_field_name = $possible_field->{FieldName};
