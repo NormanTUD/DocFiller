@@ -167,7 +167,6 @@ sub dinput {
 	debug "input($text, $entry)";
 	my $result = undef;
 	if(!$max_length) {
-		warn "if($text =~ m#\\beuro\\b#i) {";
 		$result = $d->inputbox( text => $text, entry => $entry);
 		if($d->rv()) {
 			debug "You chose cancel. Exiting.";
@@ -234,16 +233,11 @@ sub main {
 
 		my %merged_fields = ();
 		my @merged_fields_names = ();
-		my @select_fields = [map { $_->{FieldNameAlt} ? $_->{FieldNameAlt} : $_->{FieldName} => [ $_->{FieldName} => 1] } @fields];
 
 		my @selection = map { $_->{FieldName} } @fields;
-		if(!$options{fillwhatyoucan}) {
-			if(@{$select_fields[0]}) {
-				@selection = checklist("Felder", @select_fields);
-			}
-		}
 
-		my $skip_re = qr#(?:Abschluss.*Bruttolohn)|(?:Name.*und.*Ort)|(?:Monat.*Jahr)#i;
+
+		my $skip_re = qr#(?:Abschluss.*Bruttolohn)|(?:Name.*und.*Ort)|(?:Monat.*Jahr)|(Fachrichtung)|(zur.{1,5}ck)|(Anzahl)|(^(Pg\d+_|Calend|Ruecks|A_|f\d_|Nr\d+))|(^Day\d)|(Jahr|Monat vor)#i;
 
 		foreach my $possible_field (sort { $a->{FieldName} cmp $a->{FieldName} } @fields) {
 			my $possible_field_name = $possible_field->{FieldName};
@@ -261,6 +255,13 @@ sub main {
 
 			if($possible_field_name =~ m#$skip_re#) {
 				$skip_fields{$possible_field_name} = 1;
+			}
+		}
+
+		if(!$options{fillwhatyoucan}) {
+			my @select_fields = [map { $_->{FieldNameAlt} ? $_->{FieldNameAlt} : $_->{FieldName} => [ $_->{FieldName} => !!!exists($skip_fields{$_->{FieldName}}) ] } @fields];
+			if(@{$select_fields[0]}) {
+				@selection = checklist("Felder", @select_fields);
 			}
 		}
 
@@ -297,20 +298,22 @@ sub main {
 				my @field_names_invert = get_inverted_field_name($field_name, @fields);
 
 				if(exists $db{$field_name}) {
-					if($db{$field_name} eq "yes") {
+					if($db{$field_name} eq "Ja") {
 						$select_yes = 1;
 					} else {
 						$select_yes = 0;
 					}
 				}
 
-				$db{$field_name} = radio($desc, ["Ja", ["Ja", $select_yes], "Off", ["Nein", !$select_yes]]);
-				
-				foreach my $field_name_invert (@field_names_invert) {
-					if($field_name ne $field_name_invert) {
-						print $db{$field_name};
-						$db{$field_name_invert} = $db{$field_name} eq "Ja" ? "Nein" : "Ja";
-						$skip_fields{$field_name_invert} = 1;
+				if($field_name) {
+					$db{$field_name} = radio($desc, ["Ja", ["Ausgewaehlt", $select_yes], "Off", ["Nicht ausgewaehlt", !$select_yes]]);
+					
+					foreach my $field_name_invert (@field_names_invert) {
+						if($field_name ne $field_name_invert) {
+							print $db{$field_name};
+							$db{$field_name_invert} = $db{$field_name} eq "Ja" ? "Nein" : "Ja";
+							$skip_fields{$field_name_invert} = 1;
+						}
 					}
 				}
 			}
@@ -321,7 +324,6 @@ sub main {
 
 			next if exists $skip_fields{$field_name};
 			next if $field_name =~ m#$skip_re#;
-			die qq#$field_name !~ /$skip_re/# if $field_name =~ m#Jahr#;
 
 			my ($desc, $value) = get_desc_value($field_name, $field_name_alt);
 
@@ -433,9 +435,9 @@ sub get_desc_value {
 	my $value = "";
 
 	if(defined $field_name_alt && $field_name eq $field_name_alt) {
-		$desc = "$field_name_alt";
+		$desc = $field_name_alt;
 	} else {
-		$desc = "$field_name_alt";
+		$desc = $field_name;
 	}
 
 	if(exists $db{$field_name} && $db{$field_name}) {
