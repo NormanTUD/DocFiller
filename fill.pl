@@ -163,9 +163,11 @@ sub dinput {
 	my $text = shift;
 	my $entry = shift;
 	my $max_length = shift // 0;
+
 	debug "input($text, $entry)";
 	my $result = undef;
 	if(!$max_length) {
+		warn "if($text =~ m#\\beuro\\b#i) {";
 		$result = $d->inputbox( text => $text, entry => $entry);
 		if($d->rv()) {
 			debug "You chose cancel. Exiting.";
@@ -173,7 +175,7 @@ sub dinput {
 		}
 	} else {
 		while (!defined $result || length($result) > $max_length) {
-			$result = $d->inputbox( text => "$text (Max. $max_length Zeichen)", entry => $entry);
+			$result = $d->inputbox(text => "$text (Max. $max_length Zeichen)", entry => $entry);
 			if($d->rv()) {
 				debug "You chose cancel. Exiting.";
 				exit();
@@ -292,7 +294,7 @@ sub main {
 				#next;
 				my $select_yes = 0;
 
-				my $field_name_invert = get_inverted_field_name($field_name);
+				my @field_names_invert = get_inverted_field_name($field_name, @fields);
 
 				if(exists $db{$field_name}) {
 					if($db{$field_name} eq "yes") {
@@ -304,10 +306,12 @@ sub main {
 
 				$db{$field_name} = radio($desc, ["Ja", ["Ja", $select_yes], "Off", ["Nein", !$select_yes]]);
 				
-				if($field_name ne $field_name_invert) {
-					print $db{$field_name};
-					$db{$field_name_invert} = $db{$field_name} eq "Ja" ? "Nein" : "Ja";
-					$skip_fields{$field_name_invert} = 1;
+				foreach my $field_name_invert (@field_names_invert) {
+					if($field_name ne $field_name_invert) {
+						print $db{$field_name};
+						$db{$field_name_invert} = $db{$field_name} eq "Ja" ? "Nein" : "Ja";
+						$skip_fields{$field_name_invert} = 1;
+					}
 				}
 			}
 		}
@@ -356,6 +360,8 @@ sub main {
 				#next;
 				$value = dinput $desc, $value, exists $field->{FieldMaxLength} ? $field->{FieldMaxLength} : 0;
 				$db{$field_name} = $value;
+			} elsif ($field_type eq "Button") { # Checkboxen
+				# ignore, has been handled before
 			}
 			write_db();
 		}
@@ -368,6 +374,8 @@ sub main {
 
 sub get_inverted_field_name {
 	my $field_name = shift;
+	my @fields = @_;
+
 	my $field_name_invert = $field_name;
 	if($field_name =~ m#\bja\b#i) {
 		$field_name_invert =~ s#\b(j)a\b#ucif($1, "n", )."ein"#gei;
@@ -380,6 +388,15 @@ sub get_inverted_field_name {
 	} elsif ($field_name =~ m#^weiblich$#) {
 		$field_name_invert = "männlich";
 	}
+
+
+	REALFIELDNAMES: foreach my $real_field_name (map { $_->{FieldName} } @fields) {
+		if($real_field_name =~ m#$field_name_invert#i) {
+			$field_name_invert = $real_field_name;
+			last REALFIELDNAMES;
+		}
+	}
+
 	return $field_name_invert;
 }
 
