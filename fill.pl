@@ -153,14 +153,27 @@ sub analyze_file {
 }
 
 sub dinput {
-	my ($text, $entry) = @_;
+	my $text = shift;
+	my $entry = shift;
+	my $max_length = shift // 0;
 	debug "input($text, $entry)";
 	my $result = undef;
-	$result = $d->inputbox( text => $text, entry => $entry);
-	if($d->rv()) {
-		debug "You chose cancel. Exiting.";
-		exit();
+	if(!$max_length) {
+		$result = $d->inputbox( text => $text, entry => $entry);
+		if($d->rv()) {
+			debug "You chose cancel. Exiting.";
+			exit();
+		}
+	} else {
+		while (!defined $result || length($result) > $max_length) {
+			$result = $d->inputbox( text => "$text (Max. $max_length Zeichen)", entry => $entry);
+			if($d->rv()) {
+				debug "You chose cancel. Exiting.";
+				exit();
+			}
+		}
 	}
+
 	return $result;
 }
 
@@ -219,22 +232,39 @@ sub main {
 			if(!grep { $_ eq $possible_field_name } @selection) {
 				$skip_fields{$possible_field_name} = 1;
 			}
+			
 			if($possible_field_name =~ m#(IBAN)\s*\d+#) {
 				my $name = $1;
 				push @{$merged_fields{$name}}, $possible_field;
 				push @merged_fields_names, $possible_field_name;
 				$skip_fields{$possible_field_name} = 1;
 			}
+
+
+			if($possible_field_name =~ m#Abschluss / Bruttolohn /Leistung #) {
+				$skip_fields{$possible_field_name} = 1;
+			}
+
+			if($possible_field_name =~ m#Name und Ort #) {
+				$skip_fields{$possible_field_name} = 1;
+			}
+
+			if($possible_field_name =~ m#Monat / Jahr bis #) {
+				$skip_fields{$possible_field_name} = 1;
+			}
 		}
 
 		foreach my $merged_field (keys %merged_fields) {
-			my $value = dinput $merged_field, $db{$merged_field};
+			my $max_length = 0;
+			map { $max_length += $_->{FieldMaxLength} } @{$merged_fields{$merged_field}};
+
+			$db{$merged_field} = dinput $merged_field, $db{$merged_field}, $max_length;
 			write_db();
 			my $pos = 0;
 			foreach my $field (@{$merged_fields{$merged_field}}) {
 				my $field_name = $field->{FieldName};
 				my $length = $field->{FieldMaxLength};
-				$db{$field_name} = substr($value, $pos, $length);
+				$db{$field_name} = substr($db{$merged_field}, $pos, $length);
 				write_db();
 				$pos += $length;
 
@@ -299,7 +329,7 @@ sub main {
 				$db{$field_name} = radio($desc, \@$list);
 			} elsif($field_type eq "Text") {
 				#next;
-				$value = dinput $desc, $value;
+				$value = dinput $desc, $value, exists $field->{FieldMaxLength} ? $field->{FieldMaxLength} : 0;
 				$db{$field_name} = $value;
 			} elsif ($field_type eq "Button") {
 				#next;
@@ -315,7 +345,7 @@ sub main {
 					}
 				}
 
-				$db{$field_name} = radio($desc, ["Ja", ["Ja", $select_yes], "Nein", ["Nein", !$select_yes]]) eq "Ja" ? 1 : 0;
+				$db{$field_name} = radio($desc, ["Ja", ["On", $select_yes], "Nein", ["Nein", !$select_yes]]) eq "Off" ? 1 : 0;
 				
 				if($field_name ne $field_name_invert) {
 					$db{$field_name_invert} = !$db{$field_name};
@@ -340,7 +370,7 @@ sub get_inverted_field_name {
 	if($field_name =~ m#\bja\b#i) {
 		$field_name_invert =~ s#\b(j)a\b#ucif($1, "n", )."ein"#gei;
 	} elsif($field_name =~ m#\bnein\b#i) {
-		$field_name_invert =~ s#\b(n)ein\b#ucif($1, "j", )."ja"#gei;
+		$field_name_invert =~ s#\b(n)ein\b#ucif($1, "j", )."a"#gei;
 	}
 
 	if($field_name =~ m#^m.{1,5}nnlich$#) {
