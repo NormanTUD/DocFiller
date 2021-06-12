@@ -209,19 +209,39 @@ sub main {
 	if($options{file}) {
 		my @fields = analyze_file();
 
+		my %merged_fields = ();
+		my @merged_fields_names = ();
 		my @select_fields = [map { $_->{FieldNameAlt} ? $_->{FieldNameAlt} : $_->{FieldName} => [ $_->{FieldName} => 1] } @fields];
 
 		my @selection = checklist("Felder", @select_fields);
-		foreach my $possible_field (@fields) {
+		foreach my $possible_field (sort { $a->{FieldName} cmp $a->{FieldName} } @fields) {
 			my $possible_field_name = $possible_field->{FieldName};
 			if(!grep { $_ eq $possible_field_name } @selection) {
 				$skip_fields{$possible_field_name} = 1;
 			}
+			if($possible_field_name =~ m#(IBAN)\s*\d+#) {
+				my $name = $1;
+				push @{$merged_fields{$name}}, $possible_field;
+				push @merged_fields_names, $possible_field_name;
+				$skip_fields{$possible_field_name} = 1;
+			}
 		}
 
-		my $i = 0;
+		foreach my $merged_field (keys %merged_fields) {
+			my $value = dinput $merged_field, $db{$merged_field};
+			write_db();
+			my $pos = 0;
+			foreach my $field (@{$merged_fields{$merged_field}}) {
+				my $field_name = $field->{FieldName};
+				my $length = $field->{FieldMaxLength};
+				$db{$field_name} = substr($value, $pos, $length);
+				write_db();
+				$pos += $length;
+
+			}
+		}
+
 		foreach my $field (@fields) {
-			next if ++$i > 5;
 			my ($field_name, $field_name_alt, $field_type) = ($field->{FieldName}, $field->{FieldNameAlt}, $field->{FieldType});
 
 			next if $skip_fields{$field_name};
