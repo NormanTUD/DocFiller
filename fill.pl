@@ -15,8 +15,8 @@ use File::Touch;
 use Digest::MD5 qw/md5_hex/;
 use File::Slurp;
 
+my %skip_fields = ();
 my %db = ();
-
 
 my %options = (
 	debug => 0,
@@ -34,6 +34,7 @@ analyze_args(@ARGV);
 sub write_db {
 	store \%db, $options{dbfile};
 }
+
 
 sub read_db {
 	if(-e $options{dbfile}) {
@@ -65,15 +66,22 @@ sub debug (@) {
 	}
 }
 
+sub mysystem {
+	foreach (@_) {
+		debug $_;
+		system($_);
+	}
+}
+
 my $title = "DocFiller";
 my $backtitle = "";
 
 my $d = new UI::Dialog (
 	backtitle => $backtitle, 
 	title => $title,
-	height => 20,
-	width => 130, 
-	listheight => 10,
+	height => 25,
+	width => 150, 
+	listheight => 15,
 	order => ['whiptail', 'gdialog', 'zenity', 'whiptail']
 );
 
@@ -159,15 +167,40 @@ sub dinput {
 sub radio {
 	my $text = shift;
 	my $list = shift;
+	my $exit = shift // 1;
 	my $selection = $d->radiolist(
 		text => $text,
 		list => $list
 	);
 	if($d->rv()) {
 		debug "You chose cancel. Exiting.";
-		exit();
+		if($exit) {
+			exit();
+		} else {
+			return $d->rv();
+		}
 	}
 	return $selection;
+}
+
+sub checklist {
+	my $text = shift;
+	my $list = shift;
+	my $exit = shift // 1;
+
+	my @selection = $d->checklist( text => $text,
+		list => $list
+	);
+
+	if($d->rv()) {
+		debug "You chose cancel. Exiting.";
+		if($exit) {
+			exit();
+		} else {
+			return $d->rv();
+		}
+	}
+	return @selection;
 }
 
 sub main {
@@ -175,15 +208,29 @@ sub main {
 	read_db();
 	if($options{file}) {
 		my @fields = analyze_file();
+
+		my @select_fields = [map { $_->{FieldNameAlt} ? $_->{FieldNameAlt} : $_->{FieldName} => [ $_->{FieldName} => 1] } @fields];
+
+		my @selection = checklist("Felder", @select_fields);
+		foreach my $possible_field (@fields) {
+			my $possible_field_name = $possible_field->{FieldName};
+			if(!grep { $_ eq $possible_field_name } @selection) {
+				$skip_fields{$possible_field_name} = 1;
+			}
+		}
+
+		my $i = 0;
 		foreach my $field (@fields) {
+			next if ++$i > 5;
 			my ($field_name, $field_name_alt, $field_type) = ($field->{FieldName}, $field->{FieldNameAlt}, $field->{FieldType});
+
+			next if $skip_fields{$field_name};
 
 			my $desc = "";
 			my $value = "";
 
 			if(!defined $field_name_alt) {
 				next;
-				die Dumper $field;
 			}
 
 			if($field_name eq $field_name_alt) {
@@ -238,19 +285,7 @@ sub main {
 				#next;
 				my $select_yes = 0;
 
-				my $field_name_invert = $field_name;
-				if($field_name =~ m#\bja\b#i) {
-					$field_name_invert =~ s#\b(j)a\b#ucif($1, "n", )."ein"#gei;
-				} elsif($field_name =~ m#\bnein\b#i) {
-					$field_name_invert =~ s#\b(n)ein\b#ucif($1, "j", )."ja"#gei;
-				}
-				
-				if($field_name =~ m#^m.{1,5}nnlich$#) {
-					$field_name_invert = "weiblich";
-				} elsif ($field_name =~ m#^weiblich$#) {
-					$field_name_invert = "männlich";
-				}
-
+				my $field_name_invert = get_inverted_field_name($field_name);
 
 				if(exists $db{$field_name}) {
 					if($db{$field_name} == 0) {
@@ -264,6 +299,7 @@ sub main {
 				
 				if($field_name ne $field_name_invert) {
 					$db{$field_name_invert} = !$db{$field_name};
+					$skip_fields{$field_name_invert} = 1;
 				}
 			} else {
 				warning "Unknown field type";
@@ -271,9 +307,53 @@ sub main {
 			}
 			write_db();
 		}
+		#die Dumper \%db;
+		create_pdf_xml();
 	} else {
 		error "No --file given";
 	}
+}
+
+sub get_inverted_field_name {
+	my $field_name = shift;
+	my $field_name_invert = $field_name;
+	if($field_name =~ m#\bja\b#i) {
+		$field_name_invert =~ s#\b(j)a\b#ucif($1, "n", )."ein"#gei;
+	} elsif($field_name =~ m#\bnein\b#i) {
+		$field_name_invert =~ s#\b(n)ein\b#ucif($1, "j", )."ja"#gei;
+	}
+
+	if($field_name =~ m#^m.{1,5}nnlich$#) {
+		$field_name_invert = "weiblich";
+	} elsif ($field_name =~ m#^weiblich$#) {
+		$field_name_invert = "männlich";
+	}
+	return $field_name_invert;
+}
+
+sub create_pdf_xml {
+	my $content = qq#<?xml version="1.0" encoding="UTF-8"?>
+<xfdf xmlns="http://ns.adobe.com/xfdf/">
+<fields>
+			#;
+		foreach my $key (keys %db) {
+			$content .= qq#
+		<field name="$key">
+			<value>$db{$key}</value>
+		</field>
+				#;
+		}
+	$content .= qq#
+	</fields>
+</xfdf>\n#;
+	my $filename = ".".md5_hex($options{file});
+	open my $fh, '>', $filename or die $!;
+	print $fh $content;
+	close $fh;
+
+	my $command = qq#pdftk "$options{file}" fill_form "$filename" output "$options{file}_filled.pdf"#;
+	mysystem($command);
+	mysystem(qq#evince "$options{file}_filled.pdf"#);
 }
 
 main();
