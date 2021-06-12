@@ -1,0 +1,1641 @@
+---
+FieldType: Text
+FieldName: Klasse/Fachrichtung
+FieldNameAlt: Klasse/Fachrichtung
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: angestrebter Abschluss
+FieldNameAlt: angestrebter Abschluss
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: Fr&#252;herer BAf&#246;G-Antrag Ja
+FieldNameAlt: Fr&#252;herer BAf&#246;G-Antrag Ja
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Fr&#252;herer BAf&#246;G-Antrag Nein
+FieldNameAlt: Fr&#252;herer BAf&#246;G-Antrag Nein
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Nein
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: Ausbildungsst&#228;tte und Ausbildungsort
+FieldNameAlt: Ausbildungsst&#228;tte und Ausbildungsort
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: bisheriges Amt f&#252;r Ausbildungsf&#246;rderung
+FieldNameAlt: bisheriges Amt f&#252;r Ausbildungsf&#246;rderung
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: F&#246;rderungsnummer (falls vorhanden)
+FieldNameAlt: F&#246;rderungsnummer (falls vorhanden)
+FieldFlags: 29360128
+FieldJustification: Left
+FieldMaxLength: 15
+---
+FieldType: Text
+FieldName: bisherige F&#246;rderungsnummer
+FieldNameAlt: bisherige F&#246;rderungsnummer
+FieldFlags: 29360128
+FieldJustification: Left
+FieldMaxLength: 15
+---
+FieldType: Text
+FieldName: Name
+FieldNameAlt: Name
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: weiblich
+FieldNameAlt: weiblich
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: Vorname
+FieldNameAlt: Vorname
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Familienstand
+FieldNameAlt: Familienstand
+FieldFlags: 0
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: bei &#196;nderung seit
+FieldNameAlt: bei &#196;nderung seit
+FieldFlags: 29360128
+FieldJustification: Left
+FieldMaxLength: 8
+---
+FieldType: Text
+FieldName: Geburtsort
+FieldNameAlt: Geburtsort
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Geburtsname
+FieldNameAlt: Geburtsname
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: Vollzeitausbildung Nein
+FieldNameAlt: Vollzeitausbildung Nein
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Nein
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Vollzeitausbildung ja
+FieldNameAlt: Vollzeitausbildung ja
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: eigene Staatsangeh&#246;rigkeit
+FieldNameAlt: eigene Staatsangeh&#246;rigkeit
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Staatsangeh&#246;rigkeit Ehegatte/Lebenspartner
+FieldNameAlt: Staatsangeh&#246;rigkeit Ehegatte/Lebenspartner
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: eigene Kinder ja
+FieldNameAlt: eigene Kinder ja
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: Anschrift Stra&#223;e
+FieldNameAlt: Stra&#223;e
+FieldFlags: 12582912
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: Wohnung Eltern ja
+FieldNameAlt: Wohnung Eltern ja
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Wohnung Eltern nein
+FieldNameAlt: Wohnung Eltern nein
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Nein
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Eigentum Eltern ja
+FieldNameAlt: Eigentum Eltern ja
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Eigentum Eltern nein
+FieldNameAlt: Eigentum Eltern nein
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Nein
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: Anschrift Ausbildung Stra&#223;e
+FieldNameAlt: Anschrift Ausbildung Stra&#223;e
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Anschrift Hausnummer
+FieldNameAlt: Anschrift Hausnummer
+FieldFlags: 29360128
+FieldJustification: Left
+FieldMaxLength: 5
+---
+FieldType: Text
+FieldName: Anschrift Ausbildung Hausnummer
+FieldNameAlt: Anschrift Ausbildung Hausnummer
+FieldFlags: 29360128
+FieldJustification: Left
+FieldMaxLength: 5
+---
+FieldType: Text
+FieldName: Anschrift Adresszusatz
+FieldNameAlt: Anschrift Adresszusatz
+FieldFlags: 12582912
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Anschrift Ausbildung Adresszusatz
+FieldNameAlt: Anschrift Ausbildung Adresszusatz
+FieldFlags: 12582912
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Anschrift Land
+FieldNameAlt: Anschrift Land
+FieldFlags: 29360128
+FieldJustification: Left
+FieldMaxLength: 3
+---
+FieldType: Text
+FieldName: Anschrift Ort
+FieldNameAlt: Anschrift Ort
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Anschrift Ausbildung Land
+FieldNameAlt: Anschrift Land
+FieldFlags: 29360128
+FieldJustification: Left
+FieldMaxLength: 3
+---
+FieldType: Text
+FieldName: Anschrift Postleitzahl
+FieldNameAlt: Anschrift Ausbildung Postleitzahl
+FieldFlags: 29360128
+FieldJustification: Left
+FieldMaxLength: 5
+---
+FieldType: Text
+FieldName: Anschrift Ausbildung Postleitzahl
+FieldNameAlt: Anschrift Ausbildung Postleitzahl
+FieldFlags: 29360128
+FieldJustification: Left
+FieldMaxLength: 5
+---
+FieldType: Text
+FieldName: Anschrift Ausbildung Ort
+FieldNameAlt: Anschrift Ausbildung Ort
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: IBAN 1
+FieldNameAlt: IBAN 1
+FieldFlags: 29360128
+FieldJustification: Left
+FieldMaxLength: 4
+---
+FieldType: Text
+FieldName: IBAN 2
+FieldNameAlt: IBAN 2
+FieldFlags: 29360128
+FieldJustification: Left
+FieldMaxLength: 4
+---
+FieldType: Text
+FieldName: IBAN 3
+FieldNameAlt: IBAN 3
+FieldFlags: 29360128
+FieldJustification: Left
+FieldMaxLength: 4
+---
+FieldType: Text
+FieldName: IBAN 4
+FieldNameAlt: IBAN 4
+FieldFlags: 29360128
+FieldJustification: Left
+FieldMaxLength: 4
+---
+FieldType: Text
+FieldName: IBAN 5
+FieldNameAlt: IBAN 5
+FieldFlags: 29360128
+FieldJustification: Left
+FieldMaxLength: 4
+---
+FieldType: Text
+FieldName: IBAN 6
+FieldNameAlt: IBAN 6
+FieldFlags: 29360128
+FieldJustification: Left
+FieldMaxLength: 2
+---
+FieldType: Text
+FieldName: Name Geldistitut
+FieldNameAlt: Name Geldistitut
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Name, Vorname Kontoinhaber
+FieldNameAlt: Name, Vorname Kontoinhaber
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: gesetzlich familienversichert
+FieldNameAlt: gesetzlich familienversichert
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: privat versichert
+FieldNameAlt: privat versichert
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: anders versichert
+FieldNameAlt: anders versichert
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: studentisch gesetzlich versichert
+FieldNameAlt: studentisch gesetzlich versichert
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: freiwillig gesetzlich versichert
+FieldNameAlt: freiwillig gesetzlich versichert
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: pflegeversichert ja
+FieldNameAlt: pflegeversichert ja
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: pflegeversichert nein
+FieldNameAlt: pflegeversichert nein
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: Steueridentifikationsnummer
+FieldNameAlt: Steueridentifikationsnummer
+FieldFlags: 29360128
+FieldJustification: Left
+FieldMaxLength: 11
+---
+FieldType: Text
+FieldName: Name 1. Elternteil
+FieldNameAlt: Name 1. Elternteil
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Vorname Name 1. Elternteil
+FieldNameAlt: Vorname Name 1. Elternteil
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: 1. Elternteil weiblich
+FieldNameAlt: 1. Elternteil weiblich
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: 1. Elternteil m&#228;nnlich
+FieldNameAlt: 1. Elternteil m&#228;nnlich
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: 1. Elternteil divers
+FieldNameAlt: 1. Elternteil divers
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: Geburtsdatum 1. Elternteil
+FieldNameAlt: Geburtsdatum 1. Elternteil 
+FieldFlags: 29360128
+FieldJustification: Left
+FieldMaxLength: 8
+---
+FieldType: Text
+FieldName: Sterbedatum 1. Elternteil
+FieldNameAlt: Sterbedatum 1. Elternteil 
+FieldFlags: 29360128
+FieldJustification: Left
+FieldMaxLength: 8
+---
+FieldType: Text
+FieldName: Staatsangeh&#246;rigkeit 1. Elternteil
+FieldNameAlt: Staatsangeh&#246;rigkeit 1. Elternteil
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Stra&#223;e 1. Elternteil
+FieldNameAlt: Stra&#223;e 1. Elternteil
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Hausnummer 1. Elternteil
+FieldNameAlt: Hausnummer 1. Elternteil
+FieldFlags: 29360128
+FieldJustification: Left
+FieldMaxLength: 5
+---
+FieldType: Text
+FieldName: Adresszusatz 1. Elternteil
+FieldNameAlt: Adresszusatz 1. Elternteil
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Land 1. Elternteil
+FieldNameAlt: Land  1. Elternteil
+FieldFlags: 29360128
+FieldJustification: Left
+FieldMaxLength: 3
+---
+FieldType: Text
+FieldName: Postleitzahl 1. Elternteil
+FieldNameAlt: Postleitzahl 1. Elternteil
+FieldFlags: 29360128
+FieldJustification: Left
+FieldMaxLength: 5
+---
+FieldType: Text
+FieldName: Ort 1. Elternteil
+FieldNameAlt: Ort 1. Elternteil
+FieldFlags: 12582912
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Name 2. Elternteil
+FieldNameAlt: Name 2. Elternteil
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Vorname Name 2. Elternteil
+FieldNameAlt: Vorname Name 2. Elternteil
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: 2. Elternteil weiblich
+FieldNameAlt: 2. Elternteil weiblich
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: 2. Elternteil m&#228;nnlich
+FieldNameAlt: 2. Elternteil m&#228;nnlich
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: 2. Elternteil divers
+FieldNameAlt: 2. Elternteil divers
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: Geburtsdatum 2. Elternteil
+FieldNameAlt: Geburtsdatum  2. Elternteil
+FieldFlags: 29360128
+FieldJustification: Left
+FieldMaxLength: 8
+---
+FieldType: Text
+FieldName: Sterbedatum  2. Elternteil
+FieldNameAlt: Sterbedatum  2. Elternteil
+FieldFlags: 29360128
+FieldJustification: Left
+FieldMaxLength: 8
+---
+FieldType: Text
+FieldName: Staatsangeh&#246;rigkeit  2. Elternteil
+FieldNameAlt: Staatsangeh&#246;rigkeit  2. Elternteil
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Stra&#223;e  2. Elternteil
+FieldNameAlt: Stra&#223;e  2. Elternteil
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Hausnummer  2. Elternteil
+FieldNameAlt: Hausnummer  2. Elternteil
+FieldFlags: 29360128
+FieldJustification: Left
+FieldMaxLength: 5
+---
+FieldType: Text
+FieldName: Adresszusatz  2. Elternteil
+FieldNameAlt: Adresszusatz  2. Elternteil
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Land  2. Elternteil
+FieldNameAlt: Land   2. Elternteil
+FieldFlags: 29360128
+FieldJustification: Left
+FieldMaxLength: 3
+---
+FieldType: Text
+FieldName: Postleitzahl  2. Elternteil
+FieldNameAlt: Postleitzahl  2. Elternteil
+FieldFlags: 29360128
+FieldJustification: Left
+FieldMaxLength: 5
+---
+FieldType: Text
+FieldName: Ort  2. Elternteil
+FieldNameAlt: Ort  2. Elternteil
+FieldFlags: 12582912
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: Elternteile leben verheiratet oder in Partnerschaft nein
+FieldNameAlt: Elternteile leben verheiratet oder in Partnerschaft nein
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Nein
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Elternteile leben verheiratet oder in Partnerschaft ja
+FieldNameAlt: Elternteile leben verheiratet oder in Partnerschaft ja
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: dauernd getrennt lebend ja
+FieldNameAlt: dauernd getrennt lebend ja
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: Kontaktdaten Telefon
+FieldNameAlt: Kontaktdaten Telefon
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Kontaktdaten E-Mail
+FieldNameAlt: Kontaktdaten E-Mail
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: Bescheid an mich (st&#228;ndiger Wohnsitz)
+FieldNameAlt: Bescheid an mich (st&#228;ndiger Wohnsitz)
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Bescheid an mich (Wohnsitz Ausbildungsort)
+FieldNameAlt: Bescheid an mich (Wohnsitz Ausbildungsort)
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Bescheid an meinen ersten Elternteil
+FieldNameAlt: Bescheid an meinen ersten Elternteil
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Bescheid an meinen zweiten Elternteil
+FieldNameAlt: Bescheid an meinen zweiten Elternteil
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Bescheid an meine/-n Sorgeberechtigte/-n
+FieldNameAlt: Bescheid an meine/-n Sorgeberechtigte/-n
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Bescheid an die von mir bevollm&#228;chtigte Person
+FieldNameAlt: Bescheid an die von mir bevollm&#228;chtigte Person
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Anw&#228;rterbez&#252;ge oder &#228;hnliche Leistungen aus &#246;ffentlichen Mitteln
+FieldNameAlt: Anw&#228;rterbez&#252;ge oder &#228;hnliche Leistungen aus &#246;ffentlichen Mitteln
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Leistungen SGB II oder SGB III
+FieldNameAlt: Leistungen SGB II oder SGB III
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Leistungen Begabtenf&#246;rderungswerk
+FieldNameAlt: Leistungen Begabtenf&#246;rderungswerk
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: nein, keine der vorstehenden Leistungen
+FieldNameAlt: nein, keine der vorstehenden Leistungen
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: Bewilligungszeitraum von
+FieldNameAlt: Bewilligungszeitraum von
+FieldFlags: 29360128
+FieldJustification: Left
+FieldMaxLength: 6
+---
+FieldType: Text
+FieldName: Bewilligungszeitraum bis
+FieldNameAlt: Bewilligungszeitraum bis
+FieldFlags: 29360128
+FieldJustification: Left
+FieldMaxLength: 6
+---
+FieldType: Text
+FieldName: Sozialleistungen 1
+FieldNameAlt:  1Sozialleistungen 1
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Sozialleistungen 2
+FieldNameAlt:  1Sozialleistungen 2
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Riester Euro
+FieldNameAlt: Riester Euro
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: Einnahmen ja
+FieldNameAlt: Einnahmen ja
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Einnahmen nein
+FieldNameAlt: Einnahmen nein
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Nein
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Abeitgeberanteil enthalten Euro
+FieldNameAlt: Ausbildungs- und Praktikumsverg&#252;tung Euro
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: Bruttoeinnahmen Euro
+FieldNameAlt: Bruttoeinnahmen Euro
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Ausbildungs- und Praktikumsverg&#252;tung Euro
+FieldNameAlt: Ausbildungs- und Praktikumsverg&#252;tung Euro
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Eink&#252;nfte Euro
+FieldNameAlt: Eink&#252;nfte Euro
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Kapitalverm&#246;gen  Euro
+FieldNameAlt: Kapitalverm&#246;gen  Euro
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Waisenrente / Waisengeld / Renten  Euro
+FieldNameAlt: Waisenrente / Waisengeld / Renten  Euro
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Ausbildungsbeihilfen Euro
+FieldNameAlt: Ausbildungsbeihilfen Euro
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Unterhaltsleistungen Euro
+FieldNameAlt: Unterhaltsleistungen Euro
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Unterhaltsvorschussleistungen Euro
+FieldNameAlt: Unterhaltsvorschussleistungen Euro
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Weitere Einnahmen Euro
+FieldNameAlt: Weitere Einnahmen Euro
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Barverm&#246;gen Euro
+FieldNameAlt: Barverm&#246;gen Euro
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: m&#228;nnlich
+FieldNameAlt: m&#228;nnlich
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: divers
+FieldNameAlt: divers
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Barverm&#246;gen nein
+FieldNameAlt: Lebensversicherungen nein
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: Bank- und Sparguthaben Euro
+FieldNameAlt: Bank- und Sparguthaben Euro
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: Bank- und Sparguthaben nein
+FieldNameAlt: Bank- und Sparguthaben nein
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: Bauspar- und Pr&#228;mienguthaben Euro
+FieldNameAlt: Bauspar- und Pr&#228;mienguthaben Euro
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: Bauspar- und Pr&#228;mienguthaben nein
+FieldNameAlt: Bauspar- und Pr&#228;mienguthaben nein
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: Wertpapiere Euro
+FieldNameAlt: Wertpapiere Euro
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: Wertpapiere nein
+FieldNameAlt: Wertpapiere nein
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: Kraftfahrzeige Euro
+FieldNameAlt: Kraftfahrzeige Euro
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: Kraftfahrzeige nein
+FieldNameAlt: Kraftfahrzeige nein
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: Lebensversicherungen Euro
+FieldNameAlt: Barverm&#246;gen Euro
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: Lebensversicherungen nein
+FieldNameAlt: Lebensversicherungen nein
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: Altersvorsorgeverm&#246;gen Euro
+FieldNameAlt: Altersvorsorgeverm&#246;gen Euro
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: Altersvorsorgeverm&#246;gen nein
+FieldNameAlt: Altersvorsorgeverm&#246;gen nein
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: Grundst&#252;cke, Wohnungen nein
+FieldNameAlt: Grundst&#252;cke, Wohnungen nein
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: Grundst&#252;cke, Wohnungen Euro
+FieldNameAlt: Grundst&#252;cke, Wohnungen Euro
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Betriebsverm&#246;gen Euro
+FieldNameAlt: Betriebsverm&#246;gen Euro
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: Betriebsverm&#246;gen nein
+FieldNameAlt: Betriebsverm&#246;gen nein
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: Geldforderungen Euro
+FieldNameAlt: Geldforderungen Euro
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: Geldforderungen nein
+FieldNameAlt: Geldforderungen nein
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: Verm&#246;gensgegenst&#228;nde Euro
+FieldNameAlt: Verm&#246;gensgegenst&#228;nde Euro
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: Verm&#246;gensgegenst&#228;nde nein
+FieldNameAlt: Verm&#246;gensgegenst&#228;nde nein
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: Verm&#246;genswerte anrechnungsfrei Euro
+FieldNameAlt: Verm&#246;genswerte anrechnungsfrei Euro
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: &#220;bergangsbeihilfen Euro
+FieldNameAlt: &#220;bergangsbeihilfen Euro
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Hypotheken, Grundschulden Euro
+FieldNameAlt: Hypotheken, Grundschulden Euro
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Lasten Euro
+FieldNameAlt: Lasten Euro
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Sonstige Schulden Euro
+FieldNameAlt: Sonstige Schulden Euro
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr von 1
+FieldNameAlt: Monat / Jahr von 1
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr von 2
+FieldNameAlt: Monat / Jahr von 2
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr von 3
+FieldNameAlt: Monat / Jahr von 3
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr von 4
+FieldNameAlt: Monat / Jahr von 4
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr von 5
+FieldNameAlt: Monat / Jahr von 5
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr von 6
+FieldNameAlt: Monat / Jahr von 6
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr von 7
+FieldNameAlt: Monat / Jahr von 7
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr von 8
+FieldNameAlt: Monat / Jahr von 8
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr von 9
+FieldNameAlt: Monat / Jahr von 9
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr von 10
+FieldNameAlt: Monat / Jahr von 10
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr von 11
+FieldNameAlt: Monat / Jahr von 11
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr von 12
+FieldNameAlt: Monat / Jahr von 12
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr von 13
+FieldNameAlt: Monat / Jahr von 13
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr von 14
+FieldNameAlt: Monat / Jahr von 14
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr von 15
+FieldNameAlt: Monat / Jahr von 15
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr von 16
+FieldNameAlt: Monat / Jahr von 16
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr von 17
+FieldNameAlt: Monat / Jahr von 17
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr von 18
+FieldNameAlt: Monat / Jahr von 18
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr bis 1
+FieldNameAlt: Monat / Jahr bis 1
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr bis 2
+FieldNameAlt: Monat / Jahr bis 2
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr bis 4
+FieldNameAlt: Monat / Jahr bis 4
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr bis 5
+FieldNameAlt: Monat / Jahr bis 5
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr bis 6
+FieldNameAlt: Monat / Jahr bis 6
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr bis 7
+FieldNameAlt: Monat / Jahr bis 7
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr bis 8
+FieldNameAlt: Monat / Jahr bis 8
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr bis 9
+FieldNameAlt: Monat / Jahr bis 9
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr bis 10
+FieldNameAlt: Monat / Jahr bis 10
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr bis 11
+FieldNameAlt: Monat / Jahr bis 11
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr bis 12
+FieldNameAlt: Monat / Jahr bis 12
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr bis 3
+FieldNameAlt: Monat / Jahr bis 13
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr bis 13
+FieldNameAlt: Monat / Jahr bis 13
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr bis 14
+FieldNameAlt: Monat / Jahr bis 14
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr bis 15
+FieldNameAlt: Monat / Jahr bis 15
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr bis 16
+FieldNameAlt: Monat / Jahr bis 16
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr bis 17
+FieldNameAlt: Monat / Jahr bis 17
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Monat / Jahr bis 18
+FieldNameAlt: Monat / Jahr bis 18
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Name und Ort 1
+FieldNameAlt: Name und Ort 1
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Name und Ort 2
+FieldNameAlt: Name und Ort 2
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Name und Ort 3
+FieldNameAlt: Name und Ort 3
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Name und Ort 4
+FieldNameAlt: Name und Ort 4
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Name und Ort 5
+FieldNameAlt: Name und Ort 5
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Name und Ort 6
+FieldNameAlt: Name und Ort 6
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Name und Ort 7
+FieldNameAlt: Name und Ort 7
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Name und Ort 8
+FieldNameAlt: Name und Ort 8
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Name und Ort 9
+FieldNameAlt: Name und Ort 9
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Name und Ort 10
+FieldNameAlt: Name und Ort 10
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Name und Ort 11
+FieldNameAlt: Name und Ort 11
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Name und Ort 12
+FieldNameAlt: Name und Ort 12
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Name und Ort 13
+FieldNameAlt: Name und Ort 13
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Name und Ort 14
+FieldNameAlt: Name und Ort 14
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Name und Ort 15
+FieldNameAlt: Name und Ort 15
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Name und Ort 16
+FieldNameAlt: Name und Ort 16
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Name und Ort 17
+FieldNameAlt: Name und Ort 17
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Name und Ort 18
+FieldNameAlt: Name und Ort 18
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Schulart/Fachrichtung/T&#228;tigkeit 1
+FieldNameAlt: Schulart/Fachrichtung/T&#228;tigkeit 1
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Schulart/Fachrichtung/T&#228;tigkeit 2
+FieldNameAlt: Schulart/Fachrichtung/T&#228;tigkeit
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Schulart/Fachrichtung/T&#228;tigkeit 3
+FieldNameAlt: Schulart/Fachrichtung/T&#228;tigkeit 3
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Schulart/Fachrichtung/T&#228;tigkeit 4
+FieldNameAlt: Schulart/Fachrichtung/T&#228;tigkeit 4
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Schulart/Fachrichtung/T&#228;tigkeit 5
+FieldNameAlt: Schulart/Fachrichtung/T&#228;tigkeit 5
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Schulart/Fachrichtung/T&#228;tigkeit 6
+FieldNameAlt: Schulart/Fachrichtung/T&#228;tigkeit 6
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Schulart/Fachrichtung/T&#228;tigkeit 7
+FieldNameAlt: Schulart/Fachrichtung/T&#228;tigkeit 7
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Schulart/Fachrichtung/T&#228;tigkeit 8
+FieldNameAlt: Schulart/Fachrichtung/T&#228;tigkeit 8
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Schulart/Fachrichtung/T&#228;tigkeit 9
+FieldNameAlt: Schulart/Fachrichtung/T&#228;tigkeit 9
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Schulart/Fachrichtung/T&#228;tigkeit 10
+FieldNameAlt: Schulart/Fachrichtung/T&#228;tigkeit 10
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Schulart/Fachrichtung/T&#228;tigkeit 11
+FieldNameAlt: Schulart/Fachrichtung/T&#228;tigkeit 11
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Schulart/Fachrichtung/T&#228;tigkeit 12
+FieldNameAlt: Schulart/Fachrichtung/T&#228;tigkeit 12
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Schulart/Fachrichtung/T&#228;tigkeit 13
+FieldNameAlt: Schulart/Fachrichtung/T&#228;tigkeit 13
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Schulart/Fachrichtung/T&#228;tigkeit 14
+FieldNameAlt: Schulart/Fachrichtung/T&#228;tigkeit 14
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Schulart/Fachrichtung/T&#228;tigkeit 15
+FieldNameAlt: Schulart/Fachrichtung/T&#228;tigkeit 15
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Schulart/Fachrichtung/T&#228;tigkeit 16
+FieldNameAlt: Schulart/Fachrichtung/T&#228;tigkeit 16
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Schulart/Fachrichtung/T&#228;tigkeit 17
+FieldNameAlt: Schulart/Fachrichtung/T&#228;tigkeit 17
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Schulart/Fachrichtung/T&#228;tigkeit 18
+FieldNameAlt: Schulart/Fachrichtung/T&#228;tigkeit 18
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Abschluss / Bruttolohn /Leistung 1
+FieldNameAlt: Abschluss / Bruttolohn /Leistung 
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Abschluss / Bruttolohn /Leistung 2
+FieldNameAlt: Abschluss / Bruttolohn /Leistung 2
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Abschluss / Bruttolohn /Leistung 3
+FieldNameAlt: Abschluss / Bruttolohn /Leistung 3
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Abschluss / Bruttolohn /Leistung 4
+FieldNameAlt: Abschluss / Bruttolohn /Leistung 4
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Abschluss / Bruttolohn /Leistung 5
+FieldNameAlt: Abschluss / Bruttolohn /Leistung 5
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Abschluss / Bruttolohn /Leistung 6
+FieldNameAlt: Abschluss / Bruttolohn /Leistung 6
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Abschluss / Bruttolohn /Leistung 7
+FieldNameAlt: Abschluss / Bruttolohn /Leistung 7
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Abschluss / Bruttolohn /Leistung 9
+FieldNameAlt: Abschluss / Bruttolohn /Leistung 9
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Abschluss / Bruttolohn /Leistung 8
+FieldNameAlt: Abschluss / Bruttolohn /Leistung 8
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Abschluss / Bruttolohn /Leistung 10
+FieldNameAlt: Abschluss / Bruttolohn /Leistung 10
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Abschluss / Bruttolohn /Leistung 11
+FieldNameAlt: Abschluss / Bruttolohn /Leistung 11
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Abschluss / Bruttolohn /Leistung 12
+FieldNameAlt: Abschluss / Bruttolohn /Leistung 12
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Abschluss / Bruttolohn /Leistung 13
+FieldNameAlt: Abschluss / Bruttolohn /Leistung 13
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Abschluss / Bruttolohn /Leistung 14
+FieldNameAlt: Abschluss / Bruttolohn /Leistung 14
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Abschluss / Bruttolohn /Leistung 15
+FieldNameAlt: Abschluss / Bruttolohn /Leistung 15
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Abschluss / Bruttolohn /Leistung 16
+FieldNameAlt: Abschluss / Bruttolohn /Leistung 16
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Abschluss / Bruttolohn /Leistung 17
+FieldNameAlt: Abschluss / Bruttolohn /Leistung 17
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Abschluss / Bruttolohn /Leistung 18
+FieldNameAlt: Abschluss / Bruttolohn /Leistung 18
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: elterliche Sorge / Aufenthaltsbestimmungsrecht nein
+FieldNameAlt: elterliche Sorge / Aufenthaltsbestimmungsrecht nein
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: elterliche Sorge / Aufenthaltsbestimmungsrecht ja, und zwar
+FieldNameAlt: elterliche Sorge / Aufenthaltsbestimmungsrecht ja, und zwar
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: Name, Vorname Sorgeberechtigte/r
+FieldNameAlt: Name, Vorname Sorgeberechtigte/r
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Hausnummer Sorgeberechtigte/r
+FieldNameAlt: Hausnummer Sorgeberechtigte/r
+FieldFlags: 29360128
+FieldJustification: Left
+FieldMaxLength: 5
+---
+FieldType: Text
+FieldName: Adresszusatz Sorgeberechtigte/r
+FieldNameAlt: Adresszusatz Sorgeberechtigte/r
+FieldFlags: 12582912
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Land Sorgeberechtigte/r
+FieldNameAlt: Land Sorgeberechtigte/r
+FieldFlags: 29360128
+FieldJustification: Left
+FieldMaxLength: 3
+---
+FieldType: Text
+FieldName: Postleitzahl Sorgeberechtigte/r
+FieldNameAlt: Postleitzahl Sorgeberechtigte/r
+FieldFlags: 29360128
+FieldJustification: Left
+FieldMaxLength: 5
+---
+FieldType: Text
+FieldName: Stra&#223;e Sorgeberechtigte/r
+FieldNameAlt: Stra&#223;e Sorgeberechtigte/r
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Ort Sorgeberechtigte/r
+FieldNameAlt: Ort Sorgeberechtigte/r
+FieldFlags: 12582912
+FieldJustification: Left
+---
+FieldType: Button
+FieldName: Ausbildungsst&#228;tte nicht erreichbar
+FieldNameAlt: Ausbildungsst&#228;tte nicht erreichbar
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: eigener Haushalt / Lebenspartner
+FieldNameAlt: eigener Haushalt / Lebenspartner
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: eigener Haushalt / Kind
+FieldNameAlt: eigener Haushalt / Kind
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Button
+FieldName: sonstiger Grund
+FieldNameAlt: sonstiger Grund
+FieldFlags: 0
+FieldJustification: Left
+FieldStateOption: Ja
+FieldStateOption: Off
+---
+FieldType: Text
+FieldName: Datum Unterschrift auszubildende Person
+FieldNameAlt: Datum Unterschrift auszubildende Person
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Datum Unterschrift gesetzliche/e Vertreter/in
+FieldNameAlt: Datum Unterschrift gesetzliche/e Vertreter/in
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: Geburtsdatum
+FieldNameAlt: Geburtsdatum
+FieldFlags: 29360128
+FieldJustification: Left
+FieldMaxLength: 8
+---
+FieldType: Text
+FieldName: Sonstiger Grund Texteingabe
+FieldNameAlt: Sonstiger Grund Texteingabe
+FieldFlags: 8388608
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: auszubildende Person 1
+FieldFlags: 8388608
+FieldJustification: Left
